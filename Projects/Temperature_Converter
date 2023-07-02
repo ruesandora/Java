@@ -7,7 +7,7 @@ public class Temperature_Converter {
 
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter a temperature in Fahrenheit or Celsius (e.g. 32F or 20C):");
-        String input = scan.nextLine().toUpperCase();
+        String input = scan.nextLine().toUpperCase(); // Convert input to uppercase
 
         double temperature;
         String unit;
