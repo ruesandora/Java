@@ -25,9 +25,5 @@ public class Temperature_Converter {
             System.out.println("Invalid input. Please enter a temperature followed by 'F' or 'C'.");
             return;
         }
-
-        // Rest of the code goes here
-
-
     }
 }
