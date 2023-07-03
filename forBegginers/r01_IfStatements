@@ -1,1 +1,18 @@
+package day01_IfStatements;
+
+import java.util.Scanner;
+
+public class C01_Homework {
+    public static void main(String[] args) {
+// 1- Homework: Ask the user for their age, if they are 65 or older "You can retire"
+// make them write it down, otherwise make them write down the number of years they have to work to retire.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter your age:");
+        int age = scan.nextInt();
+
+        if (age >= 65) System.out.println("You Can Retire");
+        else System.out.println("For you to retire " + (65 - age) + " you have to work for another year");
+    }
+}
 
