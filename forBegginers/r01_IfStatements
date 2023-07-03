@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class C01_Homework {
     public static void main(String[] args) {
-// 1- Homework: Ask the user for their age, if they are 65 or older "You can retire"
+ // 1- Homework: Ask the user for their age, if they are 65 or older "You can retire"
 // make them write it down, otherwise make them write down the number of years they have to work to retire.
 
         Scanner scan = new Scanner(System.in);
@@ -16,3 +16,156 @@ public class C01_Homework {
     }
 }
 
+class C01_Homework1 {
+    public static void main(String[] args) {
+         // 2- Homework: Ask the user to enter a character, the character entered must be greater than
+        // write whether there is a letter or not.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter a character");
+        char charecter = scan.next().charAt(0);
+
+        if (charecter >= 'A' && charecter <= 'Z') {
+            System.out.println("The character entered is uppercase.");
+        } else {
+            System.out.println("The character entered is not uppercase.");
+        }
+    }
+}
+
+class C01_Homework2{
+    public static void main(String[] args) {
+        // 3- Prompt the user for a letter, if the character entered is a lowercase letter, you can change it to uppercase.
+       // Make it type, otherwise make it type the entered letter.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter a letter");
+        char karakter = scan.next().charAt(0);
+
+        if (Character.isLowerCase(karakter)){
+            char buyukHarf = Character.toUpperCase(karakter);
+            System.out.println("Capitalization of the entered character: " + buyukHarf);
+        } else {
+            System.out.println("Entered character: " + karakter);
+        }
+
+    }
+}
+
+class C01_Homework3 {
+    public static void main(String[] args) {
+        // AA if the student's grade is 85 and above,
+        // BB if 65 and above,
+        // CC if 50 and above
+        // Remaining DD
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter your exam grade");
+        double grade = scan.nextDouble();
+
+        if (grade > 100 || grade < 0){
+            System.out.println("Invalid Grade");
+        } else if (grade >= 85) {
+            System.out.println("Pretty Good: AA");
+        } else if (grade >= 65) {
+            System.out.println("Good: BB");
+        } else if (grade >= 50) {
+            System.out.println("Middle: CC");
+        } else {
+            System.out.println("Bad: DD");
+        }
+    }
+}
+
+class C01_Homework4 {
+    public static void main(String[] args) {
+        // Request the user's weight (kg) and height (cm)
+        // calculate body mass index (cbm) (weight*10000 / (height * height))
+        // obese if the body mass index is greater than 30, overweight if it is between 25-30,
+        // If between 20-25, write normal, if less than 20, write weak.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter your weight");
+        double weight = scan.nextDouble();
+        System.out.println("Please enter your height in CM");
+        double height = scan.nextDouble();
+        double cbm = weight*10000 / (height * height);
+
+        if (cbm >= 30){
+            System.out.println("Obese");
+        } else if (cbm >= 25) {
+            System.out.println("Overweight");
+        } else if (cbm >= 20) {
+            System.out.println("Normal");
+        } else {
+            System.out.println("Weak");
+        }
+
+        System.out.println("Your Body Mass Index: " + cbm);
+    }
+}
+
+class C01_Homework5 {
+    public static void main(String[] args) {
+        
+        // Homework: Get a note entry from the user and 
+        // determine the letter grade according to the following rules and print it on the screen:
+        //90 and above: AA
+        //80 to 89: BA
+        //70 to 79: BB
+        //60 to 69: CB
+        //50 to 59: CC
+        //40 to 49: DC
+        //30 to 39: DD
+        //0 to 29: FF
+        
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter your grade");
+        double grade = scan.nextDouble();
+        
+        if (grade >= 90){
+            System.out.println("Perfect: AA");
+        } else if (grade >= 80) {
+            System.out.println("Pretty good: BA");
+        } else if (grade >= 70) {
+            System.out.println("good: BD");
+        } else if (grade >= 60) {
+            System.out.println("Cumhurbaskanı: CB");
+        } else if (grade >= 50) {
+            System.out.println("M'ddle: CC" );
+        } else if (grade >= 40) {
+            System.out.println("You have to work harder: DC");
+        } else if (grade >= 30) {
+            System.out.println("Bad: DD");
+        } else {
+            System.out.println("You failed: FF");
+        }
+
+    }
+}
+
+class C01_Homework6 {
+    public static void main(String[] args) {
+        // Homework: Get an integer input from the user and
+        // Calculate the factorial of the number according to the following rules and print it on the screen:
+
+        // If the number is negative, give the message "Invalid input!".
+        // If the number is zero, accept its factorial as 1.
+        // If the number is positive, calculate the factorial and print it to the screen.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter an integer");
+        int num = scan.nextInt();
+
+        if (num < 0) {
+            System.out.println("Invalid login!");
+        } else {
+            int factorial = 1;
+            for (int i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+            System.out.println(num + " factorial of the number: " + factorial);
+        }
+    }
+
+}
