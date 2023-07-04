@@ -1,0 +1,14 @@
+package CodingTime;
+
+import java.util.Scanner;
+
+public class R01_VAT_CalculatorProgram {
+    public static void main(String[] args) {
+        double amount , VATPrice , vat = 0.18;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the amount of the product");
+        amount = scan.nextDouble();
+        VATPrice = amount + (amount * vat);
+        System.out.println("Price with VAT: " + VATPrice);
+    }
+}
