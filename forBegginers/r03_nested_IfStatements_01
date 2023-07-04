@@ -1,0 +1,179 @@
+package day08_Nested_If_Else;
+
+import java.util.Scanner;
+
+public class C01_Odev {
+    public static void main(String[] args) {
+
+        // Assignment: You need to write a Java program that asks a user to enter his/her grade.
+        // The program should give feedback to the user about his/her grade based on the following criteria:
+        // If the grade is 90 or higher, print the message "Great job! Your grade is A".
+        // If the grade is in the range 80-89, print the message "Good job! Your grade is B".
+        // If the grade is between 70-79, print the message "Average job! Your grade is C".
+        // If the grade is between 60-69, print the message "You need to work more! Your grade is D".
+        // If the grade is less than 60, print the message "Sorry, you failed. Your grade is F".
+        // Create the program and get a value from the user for grade input.
+        // Then print the appropriate feedback based on the criteria above.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter your grade");
+        double grade = scan.nextDouble();
+
+        if (grade > 100){
+            System.out.println("Invalid grade");
+        }  else if (grade > 90){
+            System.out.println("Great job! Your grade is A");
+        } else if (grade > 80) {
+            System.out.println("Good job! Your grade is B");
+        } else if (grade > 70) {
+            System.out.println("Average job! Your grade is C");
+        } else if (grade > 60) {
+            System.out.println("You have to study more! Your grade is D");
+        } else {
+            System.out.println("I'm sorry, you failed. Your grade is F");
+        }
+    }
+}
+
+class C03_Odev3 {
+    public static void main(String[] args) {
+
+        // Write a program that checks whether a number is positive, negative or zero.
+        // Your program asks the user to enter a number.
+        // Then check whether the entered number is positive, negative or zero and print the result on the screen.
+        // Hint: Assign the number received from the user to a variable.
+        // Then use the if-else if-else construct to check whether the number is positive, negative or zero and print the result on the screen.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter a number");
+        double num = scan.nextDouble();
+
+        if (num == 0){
+            System.out.println("Your entered number is zero");
+        } else if (num > 0) {
+            System.out.println("Your entered number is positive");
+        } else {
+            System.out.println("Your entered number is negative");
+        }
+
+    }
+}
+
+class C04_Odev4 {
+    public static void main(String[] args) {
+
+// Homework: You need to write a program to take food orders in a restaurant.
+// The program will get the price of the food the user wants to order and the payment method.
+// Then, it will apply a discount based on the payment method and print the total amount on the screen.
+
+// Rules:
+
+// A 10% discount will be applied when paying by credit card.
+// A 5% discount will be applied for cash payment.
+// No discount will be applied for other payment methods.
+// You can follow the steps below while writing your program:
+
+// Get the meal price and payment method from the user.
+// Using the nested if-else structure, calculate the discount amount according to the payment method and determine the total payment amount.
+// Print the total payment amount on the screen.
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Please enter the price of the meal");
+        double price = scan.nextDouble();
+
+        scan.nextLine();
+        System.out.println("Please enter your payment method (Cash or Credit Card)");
+        String payment = scan.nextLine();
+
+
+        if (price < 0){
+            System.out.println("Invalid Payment Amount");
+        } else if (!(payment.equalsIgnoreCase("Cash") || oayment.equalsIgnoreCase("Credit Card"))){
+            System.out.println("Invalid Payment Amount");
+        } else if (payment.equalsIgnoreCase("Cash")){
+            double discountAmount = price * 0.05;
+            double totalPayment = price - discountAmount;
+            System.out.println("Food price: " + price + "\nPayment Method: Cash" + "\nTotal Payment Amount (5% Discount Applied): " + totalPayment);
+        } else if (payment.equalsIgnoreCase("Credit Card")){
+            double discountAmount = price * 0.1;
+            double totalPayment = price - discountAmount;
+            System.out.println("Price of food: " + price + "\nPayment Method: Credit Card" + "\nTotal Payment Amount (10% Discount Applied): " + toplamOdeme);
+        }
+    }
+}
+
+class C04_Odev5 {
+    public static void main(String[] args) {
+
+// Homework: Get a decimal input from the user.
+// Then print the result on the screen by following the steps below:
+// Convert the number to an integer (casting) and assign it to a new variable.
+// Increase the integer value by 1.
+// Concatenate the incremented value with some text.
+// If the incremented value is greater than or equal to 10,
+// Print the message "The result is greater than or equal to 10".
+// Otherwise, print the message "The result is less than 10".
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter a decimal number");
+        double num = scan.nextDouble();
+        int num1 = (int) num;
+        num1++;
+
+        if (num1 >= 10){
+            System.out.println("The result is greater than or equal to 10");
+        } else {
+            System.out.println("The result is less than 10");
+        }
+    }
+}
+
+class C05_Odev6 {
+    public static void main(String[] args) {
+
+// take a number from the user and divide it by 2
+// We can write a program that calculates the remainder.
+// If the remainder is 0, we can print "The number is even", otherwise we can print "The number is odd".
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter a number");
+        double num = scan.nextDouble();
+
+        if (num % 2 == 0){
+            System.out.println("Number is Even");
+        } else {
+            System.out.println("Number is odd");
+        }
+    }
+}
+
+class C06_Odev7 {
+    public static void main(String[] args) {
+
+// Add two integers and store the result in a variable named "sum"
+// increments "sum" by 10
+// concatenate "sum" with a string of your choice and store the result in a variable called "output"
+// Check if the "total" value is greater than or equal to 50.
+// If it is, print the "output" value in upper case.
+// If not, print the "output" value in lower case.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the first integer");
+        int num1 = scan.nextInt();
+        System.out.println("Enter the second iteger");
+        int num2 = scan.nextInt();
+
+        int sum = num1 + num2;
+        sum += 10;
+        String output = sum + " is the sum plus 10";
+
+        if (sum >= 50){
+            System.out.println(output.toUpperCase());
+        } else {
+            System.out.println(output.toLowerCase());
+        }
+
+
+    }
+}
