@@ -1,0 +1,64 @@
+package day08_Nested_If_Else;
+
+import java.util.Scanner;
+
+public class C05_IfElseIfStatements {
+    public static void main(String[] args) {
+
+        // Ask the user for an integer.
+        // If the number is divisible by 3, a multiple of 3
+        // If the number is divided by 5, a multiple of 5
+        // supernumerary if divided by both
+        // if not divisible by both, write a naughty number
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter an integer");
+        int num = scan.nextInt();
+
+        if (num % 5 == 0 && num % 3 == 0){
+            System.out.println("Super Number");
+        } else if (num % 5 == 0){
+            System.out.println("Multiple of 5");
+        } else if (num % 3 == 0) {
+            System.out.println("Multiple of 3");
+        } else {
+            System.out.println("Naughty Number");
+        }
+    }
+}
+
+class C05_IfElseIfStatements1 {
+    public static void main(String[] args) {
+        // Get the number of items purchased from the user and the list price,
+        // ask the user if they have a customer card.
+        // If they have a customer card, 20% if they buy more than 10 items,
+        // if not available, 15% discount, 15% if the customer buys more than 10 items without a card,
+        // if not available, give 10% discount
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter your product quantity");
+        int product = scanner.nextInt();
+        System.out.println("Please enter the price of your products");
+        double price = scanner.nextDouble();
+        System.out.println("Do you have a customer card? Y: Yes, N: No" );
+        char card = scanner.next().toUpperCase().charAt(0);
+
+        if (card == 'Y' && product >= 10){
+            double cardDiscounted = price - price * 0.2;
+            System.out.println("20% discounted amount you have to pay: " + cardDiscounted);
+        } else if (card == 'Y' && product < 10) {
+            double cardDiscounted = price - price * 0.15;
+            System.out.println("15% discounted amount you have to pay: " + cardDiscounted);
+        } else if (card == 'N' && product >= 10) {
+            double cardDiscounted = price - price * 0.15;
+            System.out.println("15% discounted amount you have to pay: " + cardDiscounted);
+        } else if (card == 'N' && product < 10) {
+            double cardDiscounted = price - price * 0.10;
+            System.out.println("10% discounted amount you have to pay: " + cardDiscounted);
+        } else {
+            System.out.println("Invalid option");
+        }
+
+
+    }
+}
