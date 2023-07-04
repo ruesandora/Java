@@ -1,0 +1,19 @@
+package CodingTime;
+
+import java.util.Scanner;
+
+public class R02_perimeterExplorationProgram {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int range;
+        double area, volume, pi = 3.14;
+
+        System.out.println("Please enter the circle radius: ");
+        range = scan.nextInt();
+        area = 2 * pi * range;
+        volume = pi * (range * range);
+        System.out.println("Area of the apartment: " + area);
+        System.out.println("Volume of the apartment: " + volume);
+    }
+}
