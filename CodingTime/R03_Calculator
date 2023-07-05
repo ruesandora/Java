@@ -6,15 +6,15 @@ public class R03_Calculator {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        int num1, num2, action;
+        double num1, num2, action;
         System.out.print("Please enter first number: ");
-        num1 = scan.nextInt();
+        num1 = scan.nextDouble();
         System.out.print("\nPlease enter second number: ");
-        num2 = scan.nextInt();
+        num2 = scan.nextDouble();
         System.out.println("\nPlease select the action you want to take");
         System.out.println("1- Collection\n2- Subtraction\n3- Multiplication\n4- Division");
         System.out.print("Your action: ");
-        action = scan.nextInt();
+        action = scan.nextDouble();
 
         if (action == 1) {
             System.out.println("Collection: " + (num1 + num2));
