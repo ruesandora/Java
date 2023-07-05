@@ -29,7 +29,8 @@ public class R03_Calculator {
                 System.out.println("Division: " + num1 / num2);
             }
         } else {
-            System.out.println("Exiting program...");
+            System.out.println("Exiting program... The number entered is an invalid transaction: "
+            + action);
         }
     }
 }
