@@ -12,20 +12,24 @@ public class R03_Calculator {
         System.out.print("\nPlease enter second number: ");
         num2 = scan.nextInt();
         System.out.println("\nPlease select the action you want to take");
-        System.out.println("1- Collection\n2- Subtraction\n3- Multiplication\n4- Partition");
+        System.out.println("1- Collection\n2- Subtraction\n3- Multiplication\n4- Division");
         System.out.print("Your action: ");
         action = scan.nextInt();
 
-        if (action == 1){
-            System.out.println("Collection: " + (num1+num2));
-        } else if (action == 2){
+        if (action == 1) {
+            System.out.println("Collection: " + (num1 + num2));
+        } else if (action == 2) {
             System.out.println("Subtraction: " + (num1 - num2));
-        } else if (action == 3){
-            System.out.println("Multiplication: " + num1*num2);
+        } else if (action == 3) {
+            System.out.println("Multiplication: " + num1 * num2);
         } else if (action == 4) {
-            System.out.println("Partition: " + num1 / num2);
-        } else System.out.println("Invalid action");
-
-
+            if (num2 == 0) { // Division by zero error check
+                System.out.println("Cannot divide by zero");
+            } else {
+                System.out.println("Division: " + num1 / num2);
+            }
+        } else {
+            System.out.println("Exiting program...");
+        }
     }
 }
