@@ -1,0 +1,24 @@
+package day11_StringManipulations;
+
+import java.util.Scanner;
+
+public class C04_methods {
+    public static void main(String[] args) {
+        // receive an email from the user - "invalid mail" if the mail does not contain @
+        // - if mail does not contain @gmail.com, "mail must be gmail"-
+        // if the mail does not end with @gmail.com, make it say "there is a typo in the mail".
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Please enter your mailing address: ");
+        String mail = scan.nextLine();
+
+        if (!mail.contains("@")){
+            System.out.print("Invalid mail");
+        } else if (!mail.contains("@gmail.com")) {
+            System.out.print("Mail must be gmail);
+        } else if (!mail.endsWith("@gmail.com")){
+            System.out.print("There is a typo in the mail");
+        } else System.out.println("Your mail was received successfully.");
+
+    }
+}
