@@ -1,0 +1,53 @@
+package day11_StringManipulations;
+
+import java.util.Scanner;
+
+public class C02_Methods {
+    public static void main(String[] args) {
+
+        // Write a Java program and ask the user to enter a word.
+        // Then convert the word the user enters into both uppercase
+        // and lowercase letters and print these two new words on the screen.
+        // Then ask the user to enter another word and compare it with the first word.
+        // Check if the two words are equal with no difference in case and print
+        // the result on the screen.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter a word");
+        String word = scan.next();
+
+        System.out.println("The output of your entered word in upper and lower case: " +
+                word.toLowerCase() + " " + word.toUpperCase());
+
+        System.out.println("Please enter another word");
+        String word2 = scan.next();
+
+        System.out.println(word2.equals(word));
+    }
+}
+
+class C02_Methods2 {
+    public static void main(String[] args) {
+        // Write a Java program and ask the user to enter two words.
+        // Check if the two words are equal regardless of case and
+        // print the result on the screen.
+        //
+        // In this assignment, you need to check for case-independent
+        // equality between two String objects using the equalsIgnoreCase()
+        // or equalsIgnoreCase() methods.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter two word");
+        System.out.println("Your first word:");
+        String word1 = scan.next();
+        System.out.println("Your second word:");
+        String word2 = scan.next();
+
+        if (word2.equalsIgnoreCase(word1)){
+            System.out.println("Your two words are the same");
+        } else System.out.println("Your two words are not the same");
+
+    }
+}
+
+
