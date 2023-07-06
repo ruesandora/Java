@@ -1,0 +1,149 @@
+package day10_switchStatements;
+
+import java.util.Scanner;
+
+public class C01_Switch {
+    public static void main(String[] args) {
+        // Get the month number from the user and write the month.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter the month number:");
+        int month = scan.nextInt();
+
+        switch (month){
+            case 1:
+                System.out.println("January");
+                break;
+            case 2:
+                System.out.println("February");
+                break;
+            case 3:
+                System.out.println("March");
+                break;
+            case 4:
+                System.out.println("April");
+                break;
+            case 5:
+                System.out.println("May");
+                break;
+            case 6:
+                System.out.println("June");
+                break;
+            case 7:
+                System.out.println("July");
+                break;
+            case 8:
+                System.out.println("August");
+                break;
+            case 9:
+                System.out.println("September");
+                break;
+            case 10:
+                System.out.println("October");
+                break;
+            case 11:
+                System.out.println("November");
+                break;
+            case 12:
+                System.out.println("December");
+                break;
+            default:
+                System.out.println("Invalid number");
+        }
+    }
+}
+
+class C02_Switch_01 {
+    public static void main(String[] args) {
+        // Get the month number from the user and type the season.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter the month number");
+        int monthNumber = scan.nextInt();
+
+        switch (monthNumber){
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("Winter");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("First Spring");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("Summer");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("Last Spring");
+                break;
+            default:
+                System.out.println("Invalid Number");
+        }
+    }
+}
+
+class C03_Switch_02 {
+    public static void main(String[] args) {
+        // Write a Java program that prompts the user to enter a number
+        // uses a switch statement to determine whether the number corresponds
+        // to a weekday or a weekend day. If the number corresponds to a weekday,
+        // the program should print "It's a weekday". If the number corresponds to
+        // a weekend day, the program should print "It's a weekend day".
+        // If the number is not valid (i.e., is less than 1 or greater than 7),
+        // the program should print "Invalid day".
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number (1-7");
+        int day = scanner.nextInt();
+
+        switch (day){
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("It's a weekday");
+                break;
+            case 6:
+            case 7:
+                System.out.println("It's a weekend day");
+                break;
+            default:
+                System.out.println("Invalid day");
+        }
+    }
+}
+
+class C04_Switch_03 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a letter grade (A, B, C, D, or F):");
+        String letterGrade = scan.next().toUpperCase();
+
+        switch (letterGrade){
+            case "A":
+                System.out.println("4.0");
+                break;
+            case "B":
+                System.out.println("3.0");
+                break;
+            case "C":
+                System.out.println("2.0");
+                break;
+            case "D":
+                System.out.println("1.0");
+                break;
+            case "F":
+                System.out.println("0.0");
+                break;
+            default:
+                System.out.println("Invalid letter grade. Please try again.");
+        }
+    }
+}
