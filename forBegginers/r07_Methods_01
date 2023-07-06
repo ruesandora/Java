@@ -1,0 +1,14 @@
+package day11_StringManipulations;
+
+import java.util.Scanner;
+
+public class C03_length {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Please enter your name: ");
+        String name = scan.nextLine();
+        System.out.print("The letters in the middle of your name: " +
+                name.charAt(name.length()/2 - 1) + name.charAt(name.length() / 2));
+    }
+}
+
