@@ -1,0 +1,86 @@
+package day09_ternaryOperator;
+
+import java.util.Scanner;
+import java.util.SortedMap;
+
+public class C01_Ternary {
+    public static void main(String[] args) {
+        // Prompt the user for a letter, the character entered
+        // If it is a lowercase letter, change it to uppercase
+        // print, otherwise print the entered letter.
+
+        // A letter from the user
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please entar a letter");
+        char letter = scan.next().charAt(0);
+        System.out.println((letter >= 'a' && letter <= 'z' ? Character.toUpperCase(letter) : letter));
+    }
+}
+
+class C01_Ternary3 {
+    public static void main(String[] args) {
+
+// Get the user's grade If 50 or higher "Passed the class", if less than 50
+// Make it say "I'm afraid you failed."
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter your grade");
+        double num = scan.nextDouble();
+
+        System.out.println(num >= 50 ? "You passed the class" : "Unfortunately, you failed the class.");
+    }
+}
+
+class C02_Ternary1 {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+
+        System.out.println(b < a ? b > 0 ? b + a : b - a : a < 10 ? a * 5 : b/a);
+
+        int x = 10;
+        String result = x > 0 ? "Positive" : x == 0 ? "Zero" : "Negative";
+        System.out.println(result);
+    }
+}
+
+class C02_Ternary2 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter first number.");
+        double num = scan.nextDouble();
+        System.out.println("Please enter second number");
+        double num1 = scan.nextDouble();
+
+        System.out.println(num > num1 ? "The first number is greater than the second number" :
+                num < num1 ? "The first number is less that the second number" : "The first number is equal to the second number"
+        );
+    }
+}
+
+class C02_Ternary4 {
+    public static void main(String[] args) {
+        // Get a positive integer from the user
+        // print whether the number is odd or even
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a positive integer");
+        int num = scanner.nextInt();
+
+        System.out.println(num % 2 == 0 ? "The number entered is an even number" : "The entered number is an odd number");
+    }
+}
+
+class C02_Ternary5{
+    public static void main(String[] args) {
+// "even number" if the given input is an even number,
+// if input is an odd number, write a ternary that returns 2 * input.
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a number");
+        int input = scanner.nextInt();
+
+        System.out.println(input %2 == 0 ? "Even Number" : input * 2);
+
+    }
+}
