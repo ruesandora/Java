@@ -1,0 +1,25 @@
+package CodingTime;
+
+import java.util.Scanner;
+
+public class R04_UserLogin {
+    public static void main(String[] args) {
+
+        // userName: Java
+        // password: adminjava
+
+        Scanner scan = new Scanner(System.in);
+        String userName , password;
+        System.out.print("Please enter user name: ");
+        userName = scan.nextLine();
+        System.out.print("Please enter password: ");
+        password = scan.nextLine();
+
+        if (userName.equals("java") && password.equals("adminjava")){
+            System.out.println("You made a successful entry.");
+        } else System.out.println("Invalid username or password");
+
+
+
+    }
+}
