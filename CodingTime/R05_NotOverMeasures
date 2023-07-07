@@ -1,0 +1,43 @@
+package CodingTime;
+
+import java.util.Scanner;
+
+public class R05_NotOverMeasures {
+
+    // Enter grades for Math, Science, Social Studies, Physical Education and History.
+    // Calculate the average of the grades.
+    // If the average is less than 50, fail the class, if not, pass the class.
+
+    public static void main(String[] args) {
+
+        int mat, science, socialKnowledge, physicalEducation, history;
+        double GPA;
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Please enter your Math grade: ");
+        mat = scan.nextInt();
+
+        System.out.print("Please enter your Science grade: ");
+        science = scan.nextInt();
+
+        System.out.print("Please enter your Social Studies grade: ");
+        socialKnowledge = scan.nextInt();
+
+        System.out.print("Please enter your Physical Education grade: ");
+        physicalEducation = scan.nextInt();
+
+        System.out.print("Please enter your date grade: ");
+        history = scan.nextInt();
+
+        GPA = (mat + science + socialKnowledge + physicalEducation + history) / 5;
+
+        if (GPA >= 101){
+            System.out.println("\nInvalid grade information entered. Note: Your exam grades cannot be more than 100.");
+        } else if (GPA <= -1){
+            System.out.println("\nYour exam grades cannot be below 0.");
+        } else if (GPA >= 50){
+            System.out.println("\nYou passed the class, your GPA: " + GPA);
+        } else System.out.println("\nYou failed, your GPA: " + GPA);
+    }
+}
