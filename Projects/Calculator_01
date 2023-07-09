@@ -1,0 +1,49 @@
+package Java_Projects;
+
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        while (true) {
+            System.out.println("1- Addition");
+            System.out.println("2- Subtraction");
+            System.out.println("3- Multiplication");
+            System.out.println("4- Division");
+            System.out.println("0- Exit");
+
+            System.out.println("Please select the operation you want to perform:");
+
+            int choice = scan.nextInt();
+
+            if (choice == 0) {
+                System.out.println("Program is terminating...");
+                break;
+            }
+
+            System.out.print("Enter the first number: ");
+            double num1 = scan.nextDouble();
+            System.out.print("Enter the second number: ");
+            double num2 = scan.nextDouble();
+            double result = 0;
+
+            if (choice == 1) {
+                result = num1 + num2;
+            } else if (choice == 2) {
+                result = num1 - num2;
+            } else if (choice == 3) {
+                result = num1 * num2;
+            } else if (choice == 4) {
+                result = num1 / num2;
+            } else {
+                System.out.println("Invalid choice!");
+                continue;
+            }
+
+            System.out.println("Result: " + result);
+        }
+
+        scan.close();
+    }
+}
