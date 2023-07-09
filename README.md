@@ -10,7 +10,7 @@ There are entry-level projects.
 
 A simple temperature converter that allows the user to convert temperatures between Fahrenheit and Celsius.
 
-### Project 2: Calculator
+### Project 2: [Calculator](https://github.com/ruesandora/Java/blob/main/Projects/Calculator)
 
 A basic calculator that can perform arithmetic operations such as addition, subtraction, multiplication, and division.
 
