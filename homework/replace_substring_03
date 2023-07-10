@@ -1,0 +1,31 @@
+package day11_StringManipulations;
+
+import java.util.Scanner;
+
+public class homework_02 {
+    public static void main(String[] args) {
+        /* 3:
+        Write a program that removes unwanted numbers and special characters from the text entered by the user,
+        and makes only the first letter uppercase and the rest lowercase.
+
+        input: java1 ogRe2@nMek3 #ne +Gu=zel
+        output: Java ogrenmek ne guzel.
+        */
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Please enter a text: ");
+        String input = scan.nextLine();
+        String output;
+
+        input = input.replaceAll("\\d", ""); // Removes digits from the text
+        input = input.replaceAll("\\s", "1"); // Preserves space characters
+        input = input.replaceAll("\\W", ""); // Removes special characters from the text
+        input = input.replace('1', ' '); // Replaces any remaining space characters
+
+        String firstLetter = input.substring(0, 1).toUpperCase(); // Converts the first letter to uppercase
+        String remainingLetters = input.substring(1).toLowerCase(); // Converts the remaining letters to lowercase
+        output = firstLetter + remainingLetters; // Combines the first letter and remaining letters
+
+        System.out.println(output); // Prints the result to the console
+    }
+}
