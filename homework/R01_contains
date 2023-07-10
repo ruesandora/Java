@@ -1,0 +1,34 @@
+package day11_StringManipulations;
+
+import java.util.Scanner;
+
+public class homework {
+    public static void main(String[] args) {
+
+        /* 1:
+
+        Get a sentence from the user
+
+            - If home is in the sentence, make it say "home home sweet home".
+            - If work is in the sentence, write "work is good".
+            - if it contains both ""
+            - If it contains none of the above, make it say "you have to work hard"
+         */
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Please enter a text for your home: ");
+        String input = scan.nextLine();
+
+        if (input.contains("home") && input.contains("job")){
+            System.out.println("you need a home and a job");
+        } else if (input.contains("job")) {
+            System.out.println("it's good to work");
+        } else if (input.contains("home")) {
+            System.out.println("home home sweet home");
+        } else System.out.println("You have to work hard");
+
+        // We can use the contains() String method to check if a text contains the word or character we are looking for.
+        // we can check that it doesn't exist, but what if I want to search for two words or characters?
+
+        // the answer is input.contains("home") && input.contains("job")
+
