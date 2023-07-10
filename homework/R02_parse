@@ -1,0 +1,32 @@
+package day11_StringManipulations;
+
+import java.util.Scanner;
+
+public class homework_01 {
+    public static void main(String[] args) {
+        /* 2:
+
+        Write a collection of String prices given by the user in a specific format.
+
+         Example:
+        - input1: "15.30$" , input2: "11.40$"
+        - output: 26.70$
+         */
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("What is the price of your first product?: ");
+        String input1 = scan.nextLine();
+        System.out.print("What is the price of your second product?: ");
+        String input2 = scan.nextLine();
+
+        double num1 = Double.parseDouble(input1);
+        double num2 = Double.parseDouble(input2);
+        double output = (num2 + num1);
+
+        System.out.println(output);
+
+
+        // How do I calculate two String numeric input?
+        // dataType.parseDataType(input)
+    }
+}
