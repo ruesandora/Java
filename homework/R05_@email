@@ -1,0 +1,62 @@
+package day11_StringManipulations;
+
+import java.util.Scanner;
+
+public class homework_05 {
+    public static void main(String[] args) {
+        // Ask the user to enter an email address and validate it.
+        // Check whether the email address is in the correct format.
+
+    // The correct format is as follows:
+
+    // Must contain the @ symbol
+    // Must have at least 2 characters before the @ symbol
+    // Must have at least 2 characters after the @ symbol
+    // Must contain a dot (.)
+    // Must have at least 2 characters after the dot
+    // Not case sensitive
+
+    // If the email is in the correct format, print "You entered a valid email address."
+    // Otherwise, print an appropriate error message indicating which rule was violated.
+
+        // abc@example.com
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Please validate your e-mail: ");
+        String input = scan.nextLine();
+        boolean hasErrors = false; // variable to check if there are any errors.
+
+        if (!input.contains("@")){
+            System.out.println("Error: E-mail must contain the @ symbol.");
+            hasErrors = true;
+        }
+
+        int atIndex = input.indexOf("@"); // atIndex = 3
+        String beforeAt = input.substring(0, atIndex - 2); // beforeAt
+        if (beforeAt.length() < 2){
+            System.out.println("Error: There must be at least 2 characters before the @ symbol.");
+            hasErrors = true;
+        }
+        beforeAt = input.substring(0, atIndex + 2);
+        if (beforeAt.length() < 2){
+            System.out.println("Error: There must be at least 2 characters before and after the @ symbol.");
+            hasErrors = true;
+        }
+
+        if (!input.contains(".")){
+            System.out.println("Error: E-mail must contain a dot (.)");
+            hasErrors = true;
+        } else {
+            int dotIndex = input.lastIndexOf(".");
+            String afterDot = input.substring(dotIndex + 1);
+            if (afterDot.length() < 2) {
+                System.out.println("Error: There must be at least 2 characters after the dot.");
+                hasErrors = true;
+            }
+        }
+
+        if (!hasErrors) {
+            System.out.println("You entered a valid email address.");
+        }
+    }
+}
