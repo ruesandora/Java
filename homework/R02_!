@@ -1,0 +1,49 @@
+package day11_StringManipulations;
+
+import java.util.Scanner;
+
+public class homework_03 {
+    public static void main(String[] args) {
+        /* 4:
+
+        Ask the user for a password and check the following conditions
+        then tell the user all the missing parts they need to correct,
+        if all conditions are met print "password successfully saved"
+
+        - First character should be a lowercase letter
+        - Last character should be a number
+        - Password should not contain spaces
+        - Length should be at least 10 characters
+        */
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Please enter a password: ");
+        String password = scanner.nextLine();
+
+        boolean hasMissingParts = false; // variable to check if there are missing parts or not
+
+        if (!Character.isLowerCase(password.charAt(0))) {
+            System.out.println("The first character of the password should be a lowercase letter.");
+            hasMissingParts = true;
+        }
+
+        if (!Character.isDigit(password.charAt(password.length() - 1))) {
+            System.out.println("The last character of the password should be a number.");
+            hasMissingParts = true;
+        }
+
+        if (password.contains(" ")) {
+            System.out.println("The password cannot contain space characters.");
+            hasMissingParts = true;
+        }
+
+        if (password.length() < 10) {
+            System.out.println("The password should be at least 10 characters long.");
+            hasMissingParts = true;
+        }
+
+        if (!hasMissingParts) {
+            System.out.println("Password successfully saved.");
+        }
+    }
+}
