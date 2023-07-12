@@ -1,0 +1,38 @@
+package day11_StringManipulations;
+
+public class C06_lastIndexOf {
+public static void main(String[] args) {
+
+String str = "We will learn Java, there is no other way";
+
+    // Print the first occurrence index of a letter
+    System.out.println(str.indexOf("a")); // 1
+    
+    // Print the last occurrence index of a letter        
+    System.out.println(str.lastIndexOf("a")); // 24
+    
+    // Print the first index of J 
+    System.out.println(str.indexOf("J")); // 0
+    
+    // Print the last index of J     
+    System.out.println(str.lastIndexOf("J")); // 0  
+    
+    // Check if the e letter is used 2 or more times without looking at  the text
+    
+    int firstIndex = str.indexOf("e");
+    int lastIndex = str.lastIndexOf("e");  
+    
+    if (firstIndex == -1){
+        System.out.println("No e letter is used");  
+    } else if (firstIndex == lastIndex) {     
+        System.out.println("E letter is used only 1 time");          
+    } else {
+        System.out.println("E letter is used more than once."); 
+    }  
+    
+    // Print the last index of o    
+    System.out.println(str.lastIndexOf("o")); // 32
+    
+    // Print the index of previous occurrence of o before its last use
+    System.out.println(str.lastIndexOf("o" , 31)); // 27
+}
