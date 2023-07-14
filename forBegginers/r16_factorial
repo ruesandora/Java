@@ -1,0 +1,21 @@
+package day14_forLoops;
+
+import java.util.Scanner;
+
+public class C04_Faktoryel {
+    public static void main(String[] args) {
+        // Get a number less than 20 from the user and calculate its factorial.
+        // Example: 6! = 6 * 5 * 4 * 3 * 2 * 1 = 720
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a positive integer less than 20:");
+        int number = scanner.nextInt();
+        int product = 1;
+        
+        for (int i = 1; i <= number ; i++) {
+            product *= i ;
+        }
+        
+        System.out.println(number + "! = " + product);
+    }
+}
