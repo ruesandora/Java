@@ -1,0 +1,25 @@
+package day15_nestedForLoop_MethodOlusturma;
+
+import java.util.Scanner;
+
+public class C04_NestedForLoop {
+    public static void main(String[] args) {
+        /*
+            Take an integer as input from the user, and draw the following shape:
+            *
+            *  *
+            *  *  *
+            *  *  *  *
+            *  *  *  *  *
+        */
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of rows:");
+        int rows = scanner.nextInt();
+        for (int i = 1; i <= rows; i++) { // loops through the rows
+            for (int j = 1; j <= i; j++) { // loops through the columns
+                System.out.print("*  ");
+            }
+            System.out.println("");
+        }
+    }
+}
