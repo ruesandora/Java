@@ -1,0 +1,39 @@
+package day13_stringManipulations_forLoop;
+public class C06_ForLoopNotes {
+    public static void main(String[] args) {
+        // If the starting value we give does not meet the end condition,
+        // the for loop will run, BUT the for loop body will NOT be executed
+        for (int i = 0; i >10 ; i++) {
+            System.out.println(i);
+        }
+        
+        // If the starting value and the way it changes never reaches the end value,
+        // an infinite loop is created
+        /*
+        for (int i = 0; i >=0 ; i++) {
+            System.out.print(i +" ");
+        }
+         */
+        
+        // If there is a number that can be evenly divided by the desired number
+        // between the starting and ending values given by the user (including these values)
+        // print "there is a number that can be evenly divided by the desired number"
+        int start = 201;
+        int end = 237;
+        int desiredNumber = 43;
+        for (int i = start; i <= end ; i++) {
+            System.out.println(i);
+            if (i % desiredNumber == 0){
+                System.out.println("there is a number that can be evenly divided by the desired number");
+                break;
+            }
+        }
+        /*
+            While a loop is running,
+            if we achieve what we want at a certain value
+            and we don't need the rest of the loop anymore
+            we can use break there
+            When Java sees the break; command, it stops running the loop
+         */
+    }
+}
