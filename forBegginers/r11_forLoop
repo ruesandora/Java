@@ -1,0 +1,27 @@
+package day13_stringManipulations_forLoop;
+
+public class C05_forLoop {
+    public static void main(String[] args) {
+        // Print 10 consecutive integers starting from the user's input value
+        int input = 8;
+        for (int i = input; i < input+10 ; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println("");
+        
+        // Start from the user's input value, 
+        // and print integers up to 100 (including 100) in increments of 5
+        for (int i = input; i <= 100 ; i+=5) {
+            System.out.print(i + " ");
+        }
+        System.out.println("");
+        
+        // Start from 100 and go backwards to 1
+        // Print the numbers that are multiples of 7
+        for (int i = 100; i >= 1 ; i--) {
+            if (i % 7 == 0){
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
