@@ -1,0 +1,37 @@
+package day15_nestedForLoop_MethodOlusturma;
+
+public class C06_KendiSubStringimiz {
+    public static void main(String[] args) {
+        String str = "Java Candir";
+        int start = 5;
+        int end = 7;
+
+        /*
+            Given a string and start and end indices, do the following:
+            1- If the end index is less than the start index, print an error message.
+            2- If the start or end indices are out of bounds, print an error message.
+            3- Otherwise, print the characters from the start index (inclusive)
+            to the end index (exclusive).
+        */
+        if (end < start) {
+            System.out.println("The end index cannot be less than the start index.");
+        } else if (start < 0 || end < 0 || start >= str.length() || end >= str.length()) {
+            System.out.println("The indices are out of bounds.");
+        } else {
+            for (int i = start; i < end; i++) {
+                System.out.print(str.charAt(i));
+            }
+        }
+
+        System.out.println(str.substring(start, end));
+        
+        /*
+            The substring() method returns a part of a string, starting from the specified index.
+            For example, str.substring(5) returns "Candir" from the string "Java Candir".
+            However, if we don't print or assign the result to a variable, it is useless.
+        */
+
+        String desiredSubstring = str.substring(5); // saves the result but does not print it
+        System.out.println(str.substring(5)); // prints the result but does not save it
+    }
+}
