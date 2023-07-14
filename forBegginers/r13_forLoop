@@ -1,0 +1,27 @@
+package day14_forLoops;
+
+import java.util.Scanner;
+public class C02_forLoop {
+    public static void main(String[] args) {
+        // Get positive integers from the user as starting and ending values
+        // Print the sum of all numbers between them, including the limits.
+        // If the ending value is less than the starting value, print a warning and terminate the operation.
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a positive integer for the starting value:");
+        int start = scanner.nextInt();
+        System.out.println("Please enter a positive integer for the ending value:");
+        int end = scanner.nextInt();
+        
+        if (end < start){
+            System.out.println("The starting value cannot be greater than the ending value.");
+        } else {
+            int sum = 0;
+            for (int i = start; i <= end ; i++) {
+                // sum = sum + i;
+                sum += i;
+            }
+            System.out.println("The sum of the integers between the limits: " + sum);
+        }
+    }
+}
