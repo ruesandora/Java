@@ -1,0 +1,51 @@
+package day14_forLoops;
+
+import java.util.Scanner;
+
+public class C01_SifreKontrolu {
+    public static void main(String[] args) {
+        // Get a password from the user and check the following conditions:
+        // - The first character should be a lowercase letter.
+        // - The last character should be a number.
+        // - The password should not contain any spaces.
+        // - The length of the password should be at least 10 characters.
+        // If the password meets all the requirements, print "Password successfully saved."
+        // Use the flag method. Set the flag to true at the beginning and assign false value in every invalid condition.
+        
+        boolean flag = true;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter your password:");
+        String password = scanner.nextLine();
+        
+        // Check if the first character is a lowercase letter.
+        char firstChar = password.charAt(0);
+        if (!(firstChar >= 'a' && firstChar <= 'z')){
+            System.out.println("The first character should be a lowercase letter.");
+            flag = false;
+        }
+        
+        // Check if the last character is a number.
+        char lastChar = password.charAt(password.length()-1);
+        if (!(lastChar >= '0' && lastChar <= '9')){
+            System.out.println("The last character should be a number.");
+            flag = false;
+        }
+        
+        // Check if the password contains any spaces.
+        if (password.contains(" ")){
+            System.out.println("The password should not contain any spaces.");
+            flag = false;
+        }
+        
+        // Check if the length of the password is at least 10 characters.
+        if (!(password.length() >= 10)){
+            System.out.println("The length of the password should be at least 10 characters.");
+            flag = false;
+        }
+        
+        // If the flag is still true, print "Password successfully saved."
+        if (flag){
+            System.out.println("Password successfully saved.");
+        }
+    }
+}
