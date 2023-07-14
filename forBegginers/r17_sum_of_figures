@@ -1,0 +1,23 @@
+package day14_forLoops;
+import java.util.Scanner;
+public class C05_RakamlarToplami {
+    public static void main(String[] args) {
+        // Get a positive integer from the user and print the sum of its digits.
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a positive integer:");
+        int enteredNumber = scanner.nextInt();
+        int number = enteredNumber;
+        int onesPlace = 0;
+        int sumOfDigits = 0;
+        int numberOfDigits = (number+"").length();
+        
+        for (int i = 1; i <= numberOfDigits ; i++) {
+            onesPlace = number % 10;
+            sumOfDigits += onesPlace;
+            number /= 10;
+        }
+        
+        System.out.println("The sum of the digits of the " + enteredNumber +" is : " + sumOfDigits);
+    }
+}
