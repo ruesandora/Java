@@ -1,0 +1,24 @@
+package day15_nestedForLoop_MethodOlusturma;
+
+public class C05_NestedForLoop {
+    public static void main(String[] args) {
+        int rows = 5;
+        int columns = 7;
+
+        // Print row and column numbers in a rectangular shape
+        for (int i = 1; i <= rows; i++) { // loops through the rows
+            for (int j = 1; j <= columns; j++) { // loops through the columns
+                System.out.print(i + "," + j + "    ");
+            }
+            System.out.println("");
+        }
+
+        // Print row and column numbers in a triangular shape
+        for (int i = 1; i <= rows; i++) { // loops through the rows
+            for (int j = 1; j <= i; j++) { // loops through the columns
+                System.out.print(i + "," + j + "    ");
+            }
+            System.out.println("");
+        }
+    }
+}
