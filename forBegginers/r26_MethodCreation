@@ -1,0 +1,29 @@
+package day16_methodCreation_Usage;
+public class C01_MethodCreation {
+    // Question 1- Create a method that takes a String input from the user and prints the letters between
+    // the starting and ending indexes, including the starting index but excluding the ending index.
+    //
+    // - If the user enters a starting value greater than the ending value, give an error message.
+    // - If the user enters an index greater than the indexes in 'str', give an error message.
+    public static void main(String[] args) {
+        altString("Java is beautiful",3,7); //a is
+        altString("Please have some patience",5,4);
+        // The starting index cannot be greater than the ending index
+        altString("Is this not a goal ?" , 11,33);
+        // The given index is out of bounds
+        String str= "Let's not spoil it";
+        altString(str,5,10); // not sp
+    } // end of main method
+    public static void altString(String text, int startIndex, int endIndex ){
+        if (startIndex>endIndex){
+            System.out.println("The starting index cannot be greater than the ending index");
+        } else if (startIndex>=text.length() || endIndex>=text.length()) {
+            System.out.println("The given index is out of bounds");
+        }else{
+            for (int i = startIndex; i <endIndex ; i++) {
+                System.out.print(text.charAt(i));
+            }
+        }
+        System.out.println("");
+    }
+}// end of class
