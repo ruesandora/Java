@@ -1,0 +1,18 @@
+package day16_methodCreation_Usage;
+
+public class C02_UsingMethodFromAnotherClass {
+    public static void main(String[] args) {
+        C01_MethodCreation.altString("This job is very nice", 3,10); // job is ve
+        // C01_MethodCreation.altString('m',"ali",true);
+        /*
+            During a method call, the values we write are called ARGUMENTS
+            The variables inside the parentheses in the method declaration are called PARAMETERS.
+            public static void altString(String metin, int basIndex, int bitIndex ) is the parameter
+            C01_MethodCreation.altString('m',"ali",true); is the argument
+            String metin = 'm';
+            int basIndex = "ali";
+            int bitIndex = true;
+            If the arguments and parameters are not compatible, Java will give a CTE (underline it in red).
+         */
+    }
+}
