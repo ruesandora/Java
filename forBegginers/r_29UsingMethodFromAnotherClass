@@ -1,0 +1,14 @@
+package day16_methodCreation_Usage;
+public class C04_UsingMethodFromAnotherClass {
+    public static void main(String[] args) {
+        C01_MethodCreation.altString("Method",1,3); // et
+        System.out.println(C03_MethodCreation.formatName("bugra", "CAN")); // Bugra Can
+        String formattedName = C03_MethodCreation.formatName("mehmet","kemal");
+        // print the length of the formatted name
+        System.out.println(formattedName.length());
+        /*
+        We CANNOT STORE the result of a VOID method, we can only print it
+        In a method that returns a value, we can either print it directly or store it for later use.
+        */
+    }
+}
