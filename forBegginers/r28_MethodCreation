@@ -1,0 +1,25 @@
+package day16_methodCreation_Usage;
+
+import java.util.Scanner;
+public class C03_MethodCreation {
+    // Question 2- Take the first and last name separately from the user within the main method.
+    //            Create a method that takes the name and surname, capitalizes the first letter of each and
+    //            makes the rest lowercase, and returns the full name in the format "Name Surname."
+    //            input : name : Ali  surname :YILMAZ.     output : Ali Yilmaz
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter your name"); // we only ask for a single name
+        String name = scanner.next();
+        System.out.println("Please enter your surname"); // a single word
+        String surname = scanner.next();
+        System.out.println(formatName(name, surname)); // we can directly print the result it returns
+        String formattedNameSurname = formatName(name, surname) ;
+        // or we can save it for later use
+    }
+    public static String formatName(String name, String surname){
+        name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
+        surname = surname.substring(0,1).toUpperCase()+surname.substring(1).toLowerCase();
+        String formattedNameSurname = name+" "+surname;
+        return formattedNameSurname;
+    }
+}
