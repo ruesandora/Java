@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class C01_SifreKontrolu {
     public static void main(String[] args) {
+
         // Question 4: Ask the user for a password in the main method
         //             Check the password in a separate method with the following conditions:
         //             - First character must be a lowercase letter
@@ -11,6 +12,7 @@ public class C01_SifreKontrolu {
         //             - Password must have at least 10 characters
         //             Return true or false from the method and ask for input again until all conditions are met
         //             When the conditions are met, print "Password successfully saved" and exit the loop
+
         /*
             We solved this question in day17, but for more professional coding in Java,
             we will make two improvements:
@@ -27,6 +29,7 @@ public class C01_SifreKontrolu {
             The better way is to create the object before the loop
             and only assign a value inside the loop.
          */
+
         boolean result = false;
         Scanner scanner = new Scanner(System.in);
         String password;
