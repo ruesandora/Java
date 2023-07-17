@@ -1,0 +1,49 @@
+package day17_methodCreation_methodOverloading;
+public class C04_MethodOverloading {
+    /*
+    When we make a method call,
+    Java first checks the method name,
+    Then, it compares the data types of the values given as arguments
+    with the data types of the variables defined as parameters
+    and if they match, it runs the method
+    If the arguments and parameters do not match, it gives a CTE
+    In Java, you cannot have multiple methods with the same data type and number of parameters
+    If there are parameters with different data types,
+    when the order is changed,
+    java considers it a different method
+
+    */
+    public static void main(String[] args) {
+        addition(4,6); // sum of two ints : 10
+        addition(5.3 ,6); // sum of double and int : 11.3
+        addition(5, 2.4); // sum of int and double : 7.4
+        addition(4.3,2.4); // sum of double and double : 6.699999999999999
+        addition(3.4f , 5); // sum of double and int : 8.400000095367432
+        addition(2.3f,5f); // sum of double and double : 7.299999952316284
+    }
+
+    public static void addition(int number1 , int number2){ // addition int int
+        System.out.println("sum of two ints : " + (number1+number2));
+    }
+
+    public static void addition(int a , double b){ // addition int double
+        System.out.println("sum of int and double : " + (a+b));
+    }
+
+    public static void addition(double b , int a){ // addition double int
+        System.out.println("sum of double and int : " +(a+b));
+    }
+
+    public static void addition(double number1 , double number2){ // addition double double
+        System.out.println("sum of double and double : " + (number1 + number2));
+    }
+
+    /*
+    Method name + parameter data types are called method signature
+    Java does not allow two methods with the same signature in the same class
+
+    When multiple methods with the same name but different signatures are created in a class,
+    it is called METHOD OVERLOADING.
+     */
+}
+
