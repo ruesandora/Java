@@ -1,0 +1,22 @@
+package day17_methodCreation_methodOverloading;
+public class C06_WhileLoop {
+    public static void main(String[] args) {
+        // Calculate the sum of numbers from 1 to 100 (including the limits)
+        // using a for loop
+        int sum=0;
+        for (int i = 1; i <= 100 ; i++) {
+            sum+=i;
+        }
+        System.out.println("sum with for loop : " + sum); // 5050
+
+        // Calculate the sum of numbers from 1 to 100 (including the limits)
+        // using a while loop
+        sum =0;
+        int i = 1;
+        while (i<=100){
+            sum += i ;
+            i++;
+        }
+        System.out.println("sum with while loop : " + sum); // sum with while loop : 5050
+    }
+}
