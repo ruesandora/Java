@@ -1,0 +1,23 @@
+package day17_methodCreation_methodOverloading;
+import java.util.Scanner;
+public class C02_FindNumberOfDivisors {
+    public static void main(String[] args) {
+        // Question 4- Take an integer from the user within the main method.
+        //            Create a method that finds the number of positive divisors of the entered number,
+        //            and returns it to us.
+        //   example : 20  positive divisors : 1,2,4,5,10,20 number of positive divisors : 6
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a positive integer to find its positive divisors count");
+        int number = scanner.nextInt();
+        System.out.println(findNumberOfDivisors(number));
+    }
+    public static int findNumberOfDivisors(int number){
+        int counter=0;
+        for (int i = 1; i <=number ; i++) {
+            if (number % i == 0){
+                counter++;
+            }
+        }
+        return counter;
+    }
+}
