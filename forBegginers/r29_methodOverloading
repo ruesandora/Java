@@ -1,0 +1,29 @@
+package day17_methodCreation_methodOverloading;
+import java.util.Scanner;
+public class C01_FindPrimeNumber {
+    public static void main(String[] args) {
+        // Question 3- Take a positive integer greater than 2 from the user within the main method.
+        //            Create a method that checks whether the entered number is a prime number or not,
+        //            and returns "true" or "false" as a result.
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a positive integer for prime number check");
+        int number = scanner.nextInt();
+        System.out.println(isPrime(number));
+    }
+    public static boolean isPrime(int number){
+        String flag = "prime";
+        for (int i = 2; i <number ; i++) {
+            if (number % i == 0){
+                flag = "not prime";
+                break;
+            }
+        }
+        if(number == 2){
+            return true;
+        }else if (flag.equals("prime")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
