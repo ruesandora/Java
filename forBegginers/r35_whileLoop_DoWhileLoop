@@ -1,72 +1,68 @@
 package day18_whileLoop_DoWhileLoop;
 import java.util.Scanner;
+
 public class C01_SifreKontrolu {
     public static void main(String[] args) {
-        //Soru 4 : Main method'da kullanicidan sifre isteyip,
-        //          olusturacagimiz bir method'da asagidaki sartlari kontrol edin
-        //          ve method'dan true veya false dondurun
-        //         ve kullaniciya duzeltmesi gereken tum eksikleri soyleyin,
-        //         tum sartlari saglanincaya kadar tekrar deger isteyin
-        //         ve sartlar saglaninca , "sifre basariyla kaydedildi" yazdirin
-        //         - ilk harf kucuk harf olmali
-        //         - son karakter rakam olmali
-        //         - sifre bosluk icermemeli
-        //         - uzunlugu en az 10 karakter olmali
+        // Question 4: Ask the user for a password in the main method
+        //             Check the password in a separate method with the following conditions:
+        //             - First character must be a lowercase letter
+        //             - Last character must be a number
+        //             - Password cannot contain spaces
+        //             - Password must have at least 10 characters
+        //             Return true or false from the method and ask for input again until all conditions are met
+        //             When the conditions are met, print "Password successfully saved" and exit the loop
         /*
-            Bu soruyu day17'de cozduk
-            ama java'da daha profesyonel kodlama icin
-            iki duzeltme yapacagiz
+            We solved this question in day17, but for more professional coding in Java,
+            we will make two improvements:
             1-
-            while loop'un onundeki parantezin ici
-            true oldugu muddetce loop calisir
-            bu soruda sonuc variable'i da boolean deger iceriyor
-            ama sorunun mantigi acisinda
-            sonuc false oldugu muddetce loop calismali
+            The inside of the while loop's parentheses runs as long as it is true.
+            In this question, the variable "result" also contains a boolean value,
+            but in terms of the logic of the question,
+            the loop should run as long as "result" is false.
             2-
-            while loop her calistiginda
+            Every time the while loop runs,
             Scanner scanner = new Scanner(System.in);
-            String sifre = scanner.nextLine();
-            calisiyor ve yeni bir obje olusturuyor
-            bunun yerine daha guzel olani
-            loop'dan once objeyi olusturup
-            loop'un icerisinde sadece deger atamasi yapmaktir
+            String password = scanner.nextLine();
+            runs and a new object is created.
+            The better way is to create the object before the loop
+            and only assign a value inside the loop.
          */
-        boolean sonuc = false;
-        Scanner scanner;
-        String sifre;
-        while (!sonuc){ // sonuc == false  isleminin sonucu
-            scanner = new Scanner(System.in);
-            System.out.println("Lutfen sifrenizi giriniz");
-            sifre = scanner.nextLine();
-            sonuc = sifreKontrolEt(sifre);
+        boolean result = false;
+        Scanner scanner = new Scanner(System.in);
+        String password;
+        while (!result){ // the result of the operation "result == false"
+            System.out.println("Please enter your password:");
+            password = scanner.nextLine();
+            result = checkPassword(password);
         }
-        System.out.println("Sifreniz basariyla kaydedildi");
+        System.out.println("Password successfully saved.");
     }
-    public static boolean sifreKontrolEt(String sifre){
-        int sayac = 0 ; // sayac hatalari saysin
-        //         - ilk harf kucuk harf olmali
-        char ilkHarf= sifre.charAt(0);
-        if (!(ilkHarf>='a' && ilkHarf<='z')){
-            System.out.println("ilk karakter kucuk harf olmali");
-            sayac++;
+
+    public static boolean checkPassword(String password){
+        int count = 0; // count the errors
+        // - First character must be a lowercase letter
+        char firstChar = password.charAt(0);
+        if (!(firstChar>='a' && firstChar<='z')){
+            System.out.println("The first character must be a lowercase letter.");
+            count++;
         }
-        //         - son karakter rakam olmali
-        char sonKarakter = sifre.charAt(sifre.length()-1);
-        if (!(sonKarakter>='0' && sonKarakter<='9')){
-            System.out.println("Son karakter rakam olmali");
-            sayac++;
+        // - Last character must be a number
+        char lastChar = password.charAt(password.length()-1);
+        if (!(lastChar>='0' && lastChar<='9')){
+            System.out.println("The last character must be a number.");
+            count++;
         }
-        //         - sifre bosluk icermemeli
-        if (sifre.contains(" ")){
-            System.out.println("Sifre bosluk icermemeli");
-            sayac++;
+        // - Password cannot contain spaces
+        if (password.contains(" ")){
+            System.out.println("The password cannot contain spaces.");
+            count++;
         }
-        //         - uzunlugu en az 10 karakter olmali
-        if (sifre.length()<10){
-            System.out.println("Sifrenin uzunlugu en az 10 karakter olmalidir");
-            sayac++;
+        // - Password must have at least 10 characters
+        if (password.length() < 10){
+            System.out.println("The password must have at least 10 characters.");
+            count++;
         }
-        if (sayac == 0){
+        if (count == 0){
             return true;
         }else{
             return false;
