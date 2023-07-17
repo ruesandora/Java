@@ -1,0 +1,54 @@
+package day17_methodCreation_methodOverloading;
+import java.util.Scanner;
+
+public class C07_WhileLoop {
+    public static void main(String[] args) {
+        // Question 4: Ask the user for a password in the main method
+        //             Check the password in a separate method with the following conditions:
+        //             - First character must be a lowercase letter
+        //             - Last character must be a number
+        //             - Password cannot contain spaces
+        //             - Password must have at least 10 characters
+        //             Return true or false from the method and ask for input again until all conditions are met
+        //             When the conditions are met, print "Password successfully saved" and exit the loop
+        boolean result = false;
+        while (!result){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please enter your password:");
+            String password = scanner.nextLine();
+            result = checkPassword(password);
+        }
+        System.out.println("Password successfully saved.");
+    }
+
+    public static boolean checkPassword(String password){
+        int count = 0; // count the errors
+        // - First character must be a lowercase letter
+        char firstChar = password.charAt(0);
+        if (!(firstChar>='a' && firstChar<='z')){
+            System.out.println("The first character must be a lowercase letter.");
+            count++;
+        }
+        // - Last character must be a number
+        char lastChar = password.charAt(password.length()-1);
+        if (!(lastChar>='0' && lastChar<='9')){
+            System.out.println("The last character must be a number.");
+            count++;
+        }
+        // - Password cannot contain spaces
+        if (password.contains(" ")){
+            System.out.println("The password cannot contain spaces.");
+            count++;
+        }
+        // - Password must have at least 10 characters
+        if (password.length() < 10){
+            System.out.println("The password must have at least 10 characters.");
+            count++;
+        }
+        if (count == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
