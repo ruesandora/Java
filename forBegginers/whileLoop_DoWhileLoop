@@ -1,0 +1,21 @@
+package day18_whileLoop_DoWhileLoop;
+
+import java.util.Scanner;
+
+public class C04_RakamlarToplaminiBulma {
+    public static void main(String[] args) {
+        // Create a program that takes a number from the user and finds the sum of its digits using a while loop.
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a number to find the sum of its digits:");
+        int enteredNumber = scanner.nextInt();
+        int number = enteredNumber;
+        int onesDigit = 0;
+        int sumOfDigits = 0;
+        while (number>0){
+            onesDigit = number%10;
+            sumOfDigits += onesDigit;
+            number /= 10;
+        }
+        System.out.println("The sum of the digits of " + enteredNumber + " is: " + sumOfDigits + ".");
+    }
+}
