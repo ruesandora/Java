@@ -1,0 +1,31 @@
+package day18_whileLoop_DoWhileLoop;
+import java.util.Scanner;
+
+public class C02_GirilenSayilariToplama {
+    public static void main(String[] args) {
+        // Ask the user for numbers to be added together
+        // If the sum of the entered numbers exceeds 500,
+        // say "This is enough numbers, the sum of the entered numbers is ...", and end the process.
+        // If the number of entered numbers is 10 or more,
+        // say "You cannot enter more than 10 numbers, the sum of the entered numbers is ...", and end the process.
+        Scanner scanner;
+        int count = 0;
+        int sum = 0;
+        int number;
+        while (count<=10 && sum<500) { // The inside of the while loop will continue to run as long as it is true
+            scanner = new Scanner(System.in);
+            System.out.println("Please enter a number to be added:");
+            number = scanner.nextInt();
+            sum += number;
+            count++;
+        }
+        // If the while loop has ended,
+        // one of the conditions has not been met
+        if (count >= 10){
+            System.out.println("You cannot enter more than 10 numbers, the sum of the entered numbers is "+sum+".");
+        }
+        if(sum>500){
+            System.out.println("This is enough numbers, the sum of the entered numbers is "+sum+".");
+        }
+    }
+}
