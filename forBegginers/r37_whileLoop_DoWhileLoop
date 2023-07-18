@@ -1,0 +1,18 @@
+package day18_whileLoop_DoWhileLoop;
+public class C03_StringiTerseCevirme {
+    public static void main(String[] args) {
+        // Create a method that reverses a given string using a while loop,
+        // and returns the reversed string.
+        System.out.println(reverseString("This is a test."));
+        System.out.println(reverseString("Java is fun!"));
+    }
+    public static String reverseString(String str){
+        String reversedStr  = "";
+        int index = str.length()-1;
+        while(index >= 0){
+            reversedStr += str.charAt(index);
+            index--;
+        }
+        return reversedStr;
+    }
+}
